@@ -10,6 +10,8 @@ ng serve
 Open the backend folder in another window and run the GroupFinalApplication.java file, project is setup with Oracle Open JDK version 17.
 Project is supported by a PostgreSQL Database on localhost:5432 with the password 'bondstone'.
 Then in your browser, navigate to the url - localhost:4200 
+## Entity Relationship Diagram
+![alt text](https://github.com/dsoto18/employeeOnboardingPortal/blob/master/imgs/projectErd.png?raw=true)
 ## Project Features Overview
 ### Login Page
 Landing page after first navigating to the site, prompts for user credentials.
