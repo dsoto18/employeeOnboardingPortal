@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    
+}
+hr{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#headerText{
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 0;
+}
+#loadText{
+    font-size: 48px;
+    text-align: center;
+    opacity: 75%;
+    margin: 50px;
+}
+#buttonRow{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    height: 32px;
+
+    .roundButton{
+        margin-left: auto;
+        margin-right: 25%;
+    }
+}
+#announcements{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+#dialog{
+    width:500px;
+    border-radius: 12px;
+    background-color: #0B2D45;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin: auto;   
+    padding-bottom: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .roundButton{
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 200px;
+        height: 45px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form{
+        flex-direction: column;
+        display: flex;
+        text-align: left;
+    }
+
+    p {
+        font-size: 16px;
+        color: #DEB992;
+    }
+}
+input{
+    width: 300px;
+}

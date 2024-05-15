@@ -1,0 +1,71 @@
+<div class="card-container">
+    <hr>    
+    <div class="header-status">
+        <p class="header">{{data.name}}</p>
+        <p class="status" [ngStyle]="statusStyling">{{status}}</p>
+    </div>
+    <div class="project-body">
+      <p class="description">{{data.description}}</p>
+      <button class="roundButton" (click)="openModal()">Edit</button>
+    </div>
+</div>
+
+<div class="dialogBackdrop" [ngStyle]="{'display': displayStatus}"></div>
+<div id = "dialog" [ngStyle]="{'display': displayStatus}">
+    <div class = "dialogClose">
+        <img src="../../../assets/x-mark.png" (click)="closeModal()" />
+    </div>
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+        <p>Project Name</p>
+        <input class = "dialogInput" type="text" required formControlName = "name">
+        <p>Description</p>
+        <input class = "dialogInput" type="text" required formControlName = "description">
+
+        <!-- NEED TO DISABLE WHEN IN WORKER VIEW -->
+        <p id="selectHeader" *ngIf="isAdmin">Active?</p>
+        <select #active class="dialogSelect" (change)="select(active.value)" *ngIf="isAdmin">
+          <option value="" selected disabled hidden>Pick an option</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+
+
+      
+        <button class = "roundButton" type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- <div id="myModal" class="modal" [ngStyle]="{'display': displayStatus}">
+  <div class="modal-content">
+  <span class="close" (click)="closeModal()">&times;</span>
+  <form>
+      <div class="input-row">
+        <p for="projectName">Project Name</p>
+      </div>
+      <div class="input-row">
+        <input type="text" id="projectName" name="projectName">
+      </div>
+      <div class="input-row">
+        <p for="description">Description</p>
+      </div>
+      <div class="input-row">
+        <input type="text" id="description" name="description">
+      </div>
+      <div class="input-row">
+        <div class="question">
+          <label for="adminRole">Active?</label>
+        </div>
+        <div class="dropdown">
+          <select id="adminRole" name="adminRole">
+            <option value="" disabled selected>Pick an option</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-row button-row">
+          <button type="submit" class="submit-btn">Save</button>
+      </div>
+    </form>
+  </div>
+</div> -->

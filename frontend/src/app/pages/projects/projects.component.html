@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="back">
+    <a routerLink="/teams">< Back</a>
+</div>
+<div class="container">
+  <p id = "headerText">Projects for Team </p>
+  <div id="buttonRow">
+      <button class="roundButton" *ngIf="isAdmin" (click)="openModal()">New</button>
+  </div>
+  <app-project-card *ngFor="let project of projects" [data]="project"></app-project-card>
+</div>
+
+
+<div class="dialogBackdrop" [ngStyle]="{'display': displayStatus}"></div>
+<div id = "dialog" [ngStyle]="{'display': displayStatus}">
+    <div class = "dialogClose">
+        <img src="../../../assets/x-mark.png" (click)="closeModal()" />
+    </div>
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+        <p>Project Name</p>
+        <input class = "dialogInput" type="text" required formControlName = "name">
+        <p>Description</p>
+        <input class = "dialogInput" type="text" required formControlName = "description">
+        <button class = "roundButton" type="submit">Submit</button>
+    </form>
+</div>
+
+
+
+<!-- <div id="myModal" class="modal" [ngStyle]="{'display': displayStatus}">
+  <div class="modal-content">
+  <span class="close" (click)="closeModal()">&times;</span>
+  <form>
+      <div class="input-row">
+        <p for="projectName">Project Name</p>
+      </div>
+      <div class="input-row">
+        <input type="text" id="projectName" name="projectName">
+      </div>
+      <div class="input-row">
+        <p for="description">Description</p>
+      </div>
+      <div class="input-row">
+        <input type="text" id="description" name="description">
+      </div>
+      <div class="input-row button-row">
+          <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+</div> -->

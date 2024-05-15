@@ -1,0 +1,58 @@
+
+body {
+    background-color: #051622;
+    color:#1BA098;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+hr{
+    border: 1px solid #DEB992;
+}
+.roundButton {
+    background-color: #1BA098;
+    color: rgba(255, 255, 255, 0.75);
+    border: none;
+    font-size: 16px;
+    width: 100px;
+    height: 32px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 0 0 rgba(0,0,0,.45); */
+    text-align: center;
+}
+.roundButton:hover{
+    color: rgba(255, 255, 255, 1);
+    opacity: 75%;
+    cursor: pointer;
+}
+.dialogBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.dialogClose{
+    width: inherit;
+    img {
+        float: right;
+    }
+    img:hover{
+        opacity: 75%;
+        cursor: pointer;
+    }
+}
+.dialogInput{
+    background: none;
+    border: none;
+    border-bottom:1px solid #DEB992;
+    color: white;
+    font-size: 16px;
+}
+.dialogSelect{
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    color:#5533FF;
+    font-size: 16px;
+}

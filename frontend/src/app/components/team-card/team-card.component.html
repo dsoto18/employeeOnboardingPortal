@@ -1,0 +1,14 @@
+<div id = "container" (click) = onClick()>
+    <!-- <a href="projects"> -->
+        <div id = "header">    
+            <p id = "team">{{data.name}}</p>
+            <p class ="faded" style="margin-left: auto;"># of Projects: {{projectCount}}</p>
+        </div>
+        <hr/>
+        <p class ="faded">Members</p>
+        <div id="grid">
+            <button class="roundButton" *ngFor="let name of displayNames">{{name}}</button>
+        </div>
+    <!-- </a> -->
+</div>
+

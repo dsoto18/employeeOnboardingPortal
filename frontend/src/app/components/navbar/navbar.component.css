@@ -1,0 +1,36 @@
+#navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 24px;
+    padding-left: 58px;
+    border: 2px solid #DEB992;
+}
+#leftSide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#routes {
+    font-size: 48px;
+    margin-left: auto;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+#routes a {
+    padding: 20px;
+    text-decoration: none;
+}
+a:visited {
+    color: #1BA098;
+}
+img {
+    background-color: #0D3A59;
+    width:71px;
+    height: 71px;
+    border-radius: 50%;
+}
+.user{
+    color: #F24E1E;
+    font-size: 24px;
+    margin-left: 50px;
+}

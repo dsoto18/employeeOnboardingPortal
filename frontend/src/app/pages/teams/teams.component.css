@@ -1,0 +1,130 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    
+}
+#headerText{
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#loadText{
+    font-size: 48px;
+    text-align: center;
+    opacity: 75%;
+}
+#grid{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    /* grid-gap:100px */
+}
+#newTeamCard{
+    width: 315px;
+    height: 240px;
+    border-radius: 20px;
+    border: 2px solid #DEB992;
+    color:#DEB992;
+    box-shadow: 0 4px 0 0 rgba(0,0,0,.45);
+    text-align: center;
+    font-size: 16px;
+    align-content: center;
+    margin:50px;
+}
+#newTeamCard:hover{
+    opacity: 75%;
+    cursor: pointer;
+}
+#plus{
+    font-size: 150px;
+    margin: 0px;
+}
+#dialog{
+    width:770px;
+    border-radius: 12px;
+    background-color: #0B2D45;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin: auto;   
+    padding-bottom: 20px;
+    color:#DEB992;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .roundButton{
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 200px;
+        height: 45px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form{
+        width: 315px;
+        flex-direction: column;
+        display: flex;
+    }
+    h1{
+        text-align: center;
+    }
+    .dialogSelect{
+        width:160px;
+        height:36px;
+        border-radius: 8px 0 0 8px;
+    }
+}
+#selectRow{
+    display: flex;
+    width: inherit;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center;
+    .roundButton{
+        margin:0;
+        width:50px;
+        height: inherit;
+        padding: 0;
+        border-radius: 0 8px 8px 0;
+    }
+}
+#membersList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    img{
+        width: 25px;
+        height: 25px;
+    }
+    #member{
+        margin:10px;
+        width:100px;
+        height:32px;
+        padding: 0;
+    }
+    #member:hover{
+        opacity: 100%;
+        color:rgba(255,255,255,.75);
+        cursor:auto;
+    }
+}
+.memberRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img:hover {
+        opacity: 75%;
+        cursor: pointer;
+    }
+}

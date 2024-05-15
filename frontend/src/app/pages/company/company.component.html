@@ -1,0 +1,14 @@
+<div id ="Company">
+        <p class="big">Select Company </p>
+        <div class="dropDown">
+                <label for="company"></label>
+                <select #company name="company" id="content" (change) = "select(company.value)">
+                <option value="" selected disabled hidden>Company</option>
+                <option *ngFor="let company of companies" value = {{company.id}}>{{company.name}}</option>
+                <!-- <option value="CookSystems">CookSystems</option>
+                <option value="FedEx" >FedEx</option>
+                <option value="Google">Google</option> -->
+        </select> 
+        </div>
+        <button class="roundButton" (click) = chooseCompany()>submit</button>
+</div>

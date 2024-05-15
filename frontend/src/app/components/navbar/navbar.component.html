@@ -1,0 +1,14 @@
+<div id ="navbar">
+    <div id = "leftSide">
+        <img src="../../../assets/016.png" alt = logo/>
+        <p class = "user" *ngIf="!isAdmin">{{username}}</p>
+        <p class = "user" *ngIf="isAdmin">ACTING AS ADMIN</p>
+    </div>
+    <div id = "routes">
+        <a routerLink="/home">Home</a>
+        <a routerLink="/company" *ngIf="isAdmin">Company</a>
+        <a routerLink="/teams">Teams</a>
+        <a routerLink="/users" *ngIf="isAdmin">Users</a>
+        <a routerLink="/">Logout</a>
+    </div>
+</div>

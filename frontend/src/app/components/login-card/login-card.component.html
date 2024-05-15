@@ -1,0 +1,13 @@
+<div class = "card">
+    <div class="cardImage">
+        <img src="../../assets/016.png" alt="">
+    </div>
+    <div class="fields">
+        <form action="submit" [formGroup]="loginForm" (ngSubmit) = "onSubmit()">
+            <input type="text" id="email" placeholder="email" formControlName = "email">
+            <input type="password" id="password" placeholder="password" formControlName = "pass">
+            <button>LOGIN</button>
+        </form>
+    </div>
+</div>
+

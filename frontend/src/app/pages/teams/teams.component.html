@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div id = "container">
+    <p id = "headerText">Teams</p>
+    <div id = "loadText" *ngIf="loading">Loading teams...</div>
+    <div id = "grid" *ngIf="!loading">
+        <app-team-card *ngFor="let team of teams" [data]="team"></app-team-card>
+        <div id="newTeamCard" (click)="openDialog()" *ngIf="isAdmin">
+            <p id="plus">+</p>
+            <p>New Team</p>
+        </div>
+    </div>
+</div>
+
+<div class="dialogBackdrop" [ngStyle]="{'display': dialogDisplay}"></div>
+<div id = "dialog" [ngStyle]="{'display': dialogDisplay}">
+    <div class = "dialogClose">
+        <img src="../../../assets/x-mark.png" (click)="closeDialog()" />
+    </div>
+    <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+        <p>Team Name</p>
+        <input class = "dialogInput" formControlName="name">
+        <p>Description</p>
+        <input class = "dialogInput" formControlName="description">
+        <br/>
+        <h1>Select Members</h1>
+        <div id = "selectRow">
+            <select #members class = "dialogSelect" (change)="select(members.value)">
+                <option value="" selected disabled hidden>Pick an Option</option>
+                <option *ngFor="let member of teamMembers" value = "{{member.id}}">{{getDisplayName(member)}}</option>
+            </select>
+            <button type="button" class="roundButton" (click)="addMember()">Add</button>
+        </div>
+        <div id="membersList">
+            <div class="memberRow" *ngFor="let member of addMembers">
+                <button id = "member" class="roundButton" disabled="true">{{getDisplayName(member)}}</button>
+                <img src="../../../assets/x-mark.png" (click)="removeMember(member)"/>
+            </div>
+        </div>
+        <button class = "roundButton" type = "submit">Submit</button>
+    </form>
+</div>

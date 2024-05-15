@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div id = "container">
+    <p id = "headerText">Announcements</p>
+    <div id="buttonRow">
+        <button class="roundButton" *ngIf="isAdmin" (click)="openDialog()">New</button>
+    </div>
+    <hr/>
+    <div id = "loadText" *ngIf="loading">Loading announcements...</div>
+    <div id="announcements" *ngIf="!loading">
+        <app-announcement *ngFor="let a of announcements" [data] = a></app-announcement>
+    </div>
+</div>
+
+<div class="dialogBackdrop" [ngStyle]="{'display': dialogDisplay}"></div>
+<div id = "dialog" [ngStyle]="{'display': dialogDisplay}">
+    <div class = "dialogClose">
+        <img src="../../../assets/x-mark.png" (click)="closeDialog()" />
+    </div>
+    <form [formGroup]="announcementForm" (ngSubmit)="onSubmit()">
+        <p>Title</p>
+        <input class = "dialogInput" type="text" name = "title" required formControlName = "title">
+        <p>Message</p>
+        <input class = "dialogInput" type="text" required formControlName = "message">
+        <button class = "roundButton" type="submit">Submit</button>
+    </form>
+</div>
